@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
 use App\Models\SocialLink;
+use Illuminate\Support\Facades\Route;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -37,8 +38,13 @@ class HandleInertiaRequests extends Middleware
                 'user' => $request->user(),
             ],
             'ziggy' => fn () => [
-                ...(new Ziggy)->toArray(),
-                'location' => $request->url(),
+                'url' => $request->url(),
+                'port' => null,
+                'defaults' => [],
+                'routes' => collect(Route::getRoutes()->getRoutesByName())
+                    ->mapWithKeys(function ($route, $name) {
+                        return [$name => $route->uri()];
+                    })->toArray(),
             ],
             'flash' => [
                 'message' => fn () => $request->session()->get('message')
