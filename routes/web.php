@@ -32,15 +32,17 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 // Admin Routes (protected)
-Route::middleware(['auth'])->prefix('admin')->group(function () {
-    Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    // Dashboard
+    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard.index');
     
     // Personal Info
-    Route::get('/personal-info', [AdminPersonalInfoController::class, 'edit'])->name('admin.personal-info.edit');
-    Route::put('/personal-info', [AdminPersonalInfoController::class, 'update'])->name('admin.personal-info.update');
+    Route::get('/personal-info', [AdminPersonalInfoController::class, 'edit'])->name('personal-info.edit');
+    Route::put('/personal-info', [AdminPersonalInfoController::class, 'update'])->name('personal-info.update');
     
     // CV Upload
-    Route::post('/cv-upload', [AdminPersonalInfoController::class, 'uploadCV'])->name('admin.cv.upload');
+    Route::post('/cv-upload', [AdminPersonalInfoController::class, 'uploadCV'])->name('cv.upload');
     
     // Social Links
     Route::resource('social-links', AdminSocialLinksController::class)->except(['show']);
