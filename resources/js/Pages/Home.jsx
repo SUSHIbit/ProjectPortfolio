@@ -1,6 +1,6 @@
 import React from "react";
 import { Head } from "@inertiajs/react";
-import PublicLayout from "@/Layouts/PublicLayout";
+import PublicLayout from "@/Components/PublicLayout";
 
 export default function Home({ personalInfo, socialLinks }) {
     return (

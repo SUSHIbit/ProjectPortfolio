@@ -1,6 +1,6 @@
 import React from "react";
 import { Head } from "@inertiajs/react";
-import PublicLayout from "@/Layouts/PublicLayout";
+import PublicLayout from "@/Components/PublicLayout";
 import { ContactLinks } from "@/Components/ContactLinks";
 
 export default function Contact({ personalInfo, internetLinks, socialLinks }) {

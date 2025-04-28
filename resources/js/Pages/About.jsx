@@ -1,6 +1,6 @@
 import React from "react";
 import { Head } from "@inertiajs/react";
-import PublicLayout from "@/Layouts/PublicLayout";
+import PublicLayout from "@/Components/PublicLayout";
 import { SkillsList } from "@/Components/SkillsList";
 import { Button } from "@/Components/ui/button";
 
