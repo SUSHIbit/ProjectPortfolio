@@ -7,7 +7,7 @@ export default function Home({ personalInfo, socialLinks }) {
         <PublicLayout socialLinks={socialLinks}>
             <Head title="Home" />
 
-            <div className="flex flex-col justify-center min-h-[80vh] px-6 mt-8 sm:mt-0 sm:items-center sm:px-4">
+            <div className="flex flex-col justify-center min-h-[80vh] px-6 mt-8 sm:mt-0 sm:items-center sm:px-4 max-w-7xl mx-auto">
                 <div className="mb-4 text-lg sm:text-center text-left">
                     {personalInfo.name}
                 </div>

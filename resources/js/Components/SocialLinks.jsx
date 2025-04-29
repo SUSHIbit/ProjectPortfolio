@@ -1,6 +1,10 @@
 import React from "react";
 
-export const SocialLinks = ({ links, orientation = "vertical" }) => {
+export const SocialLinks = ({
+    links,
+    orientation = "vertical",
+    isDarkTheme = false,
+}) => {
     if (!links || links.length === 0) {
         return null;
     }
@@ -19,7 +23,11 @@ export const SocialLinks = ({ links, orientation = "vertical" }) => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-400 dark:hover:text-zinc-400 transition-colors"
+                    className={`${
+                        isDarkTheme
+                            ? "text-zinc-200 hover:text-zinc-400"
+                            : "text-zinc-800 dark:text-zinc-200 hover:text-zinc-400 dark:hover:text-zinc-400"
+                    } transition-colors`}
                 >
                     {link.icon.toUpperCase()}
                 </a>
