@@ -6,7 +6,7 @@ export const SkillsList = ({ skills }) => {
     }
 
     return (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 sm:justify-center justify-start text-sm sm:text-base">
             {skills.map((skill) => (
                 <span
                     key={skill.id}

@@ -9,28 +9,32 @@ export default function About({ personalInfo, skills, socialLinks }) {
         <PublicLayout socialLinks={socialLinks}>
             <Head title="About" />
 
-            <div className="container mx-auto py-24 px-4">
-                <div className="max-w-3xl mx-auto">
-                    <h1 className="text-5xl font-light mb-8">About</h1>
+            <div className="container mx-auto py-8 sm:py-24 px-6 sm:px-4">
+                <div className="max-w-3xl mx-auto mt-4 sm:mt-0">
+                    <h1 className="text-3xl sm:text-5xl font-light mb-6 sm:mb-8 text-left sm:text-center">
+                        About
+                    </h1>
 
-                    <h2 className="text-3xl font-light mb-6">
+                    <h2 className="text-xl sm:text-3xl font-light mb-4 sm:mb-6 text-left sm:text-center">
                         I'm {personalInfo.name}. A designer, maker and problem
                         solver.
                     </h2>
 
-                    <div className="prose dark:prose-invert mb-12">
+                    <div className="prose dark:prose-invert mb-8 sm:mb-12 text-left sm:text-center text-sm sm:text-base">
                         <p>{personalInfo.about_description}</p>
                     </div>
 
-                    <div className="mb-12">
-                        <h3 className="text-xl mb-4">EXPERIENCE</h3>
-                        <ul className="space-y-2 text-zinc-600 dark:text-zinc-400">
+                    <div className="mb-8 sm:mb-12">
+                        <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
+                            EXPERIENCE
+                        </h3>
+                        <ul className="space-y-2 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
                             <li>- Degree in Brand Communications</li>
                             <li>
                                 - 15 years experience in Digital Design, Web
                                 Development, Advertising and Product Development
                             </li>
-                            <li className="mt-4">
+                            <li className="mt-3 sm:mt-4">
                                 Within those 15 years, I have:
                             </li>
                             <li>- 12 years experience in Web Design</li>
@@ -46,14 +50,16 @@ export default function About({ personalInfo, skills, socialLinks }) {
                     </div>
 
                     {skills.length > 0 && (
-                        <div className="mb-12">
-                            <h3 className="text-xl mb-4">SKILLS</h3>
+                        <div className="mb-8 sm:mb-12">
+                            <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
+                                SKILLS
+                            </h3>
                             <SkillsList skills={skills} />
                         </div>
                     )}
 
                     {personalInfo.cv_file && (
-                        <div className="mb-12">
+                        <div className="mb-8 sm:mb-12 flex sm:justify-center justify-start">
                             <Button
                                 asChild
                                 variant="outline"
@@ -71,12 +77,14 @@ export default function About({ personalInfo, skills, socialLinks }) {
                     )}
 
                     {personalInfo.kudos_text && (
-                        <div className="mb-12">
-                            <h3 className="text-xl mb-4">KUDOS</h3>
-                            <p className="text-zinc-600 dark:text-zinc-400">
+                        <div className="mb-8 sm:mb-12">
+                            <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
+                                KUDOS
+                            </h3>
+                            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
                                 {personalInfo.kudos_text}
                             </p>
-                            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+                            <p className="mt-3 sm:mt-4 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
                                 <a href="#" className="underline">
                                     Ahmad Zhafri
                                 </a>
@@ -109,7 +117,7 @@ export default function About({ personalInfo, skills, socialLinks }) {
                         </div>
                     )}
 
-                    <div className="mb-12">
+                    <div className="mb-8 sm:mb-12 flex sm:justify-center justify-start">
                         <Button
                             asChild
                             variant="outline"

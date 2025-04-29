@@ -6,14 +6,14 @@ export const ContactLinks = ({ links }) => {
     }
 
     return (
-        <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center">
+        <div className="flex flex-wrap gap-x-3 gap-y-2 sm:justify-center justify-start">
             {links.map((link, index) => (
                 <React.Fragment key={link.id}>
                     <a
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-400 dark:hover:text-zinc-400 transition-colors"
+                        className="text-sm sm:text-base text-zinc-800 dark:text-zinc-200 hover:text-zinc-400 dark:hover:text-zinc-400 transition-colors"
                     >
                         {link.platform}
                     </a>

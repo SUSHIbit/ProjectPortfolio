@@ -23,7 +23,7 @@ export const ProjectCard = ({ project }) => {
                     )}
                 </div>
                 {project.description && (
-                    <p className="text-zinc-600 dark:text-zinc-400 max-w-md">
+                    <p className="text-zinc-600 dark:text-zinc-400 max-w-md hidden sm:block">
                         {project.description}
                     </p>
                 )}
