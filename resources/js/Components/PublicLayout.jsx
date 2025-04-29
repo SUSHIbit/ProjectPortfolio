@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import { SocialLinks } from "@/Components/SocialLinks";
 
 export default function PublicLayout({
@@ -7,6 +7,12 @@ export default function PublicLayout({
     socialLinks = [],
     isDarkTheme = false,
 }) {
+    // Get current route from Inertia
+    const { url } = usePage();
+    
+    // Determine if we're on the homepage
+    const isHomePage = url === '/' || url === '';
+    
     return (
         <div
             className={`min-h-screen flex flex-col ${
@@ -16,7 +22,7 @@ export default function PublicLayout({
             }`}
         >
             {/* Header with HOME link on left and copyright on right */}
-            <header className="p-4 z-10 max-w-7xl w-full mx-auto px-10">
+            <header className="max-w-7xl w-full mx-auto px-6 sm:px-10 p-4 z-10">
                 <div className="flex items-center justify-between">
                     <Link
                         href="/"
@@ -38,10 +44,12 @@ export default function PublicLayout({
                 </div>
             </header>
 
-            {/* Desktop social links - vertical left */}
-            <div className="fixed left-10 top-1/2 transform -translate-y-1/2 z-10 hidden sm:block">
-                <SocialLinks links={socialLinks} isDarkTheme={isDarkTheme} />
-            </div>
+            {/* Desktop social links - vertical left - only visible on homepage */}
+            {isHomePage && (
+                <div className="fixed left-10 top-1/2 transform -translate-y-1/2 z-10 hidden sm:block">
+                    <SocialLinks links={socialLinks} isDarkTheme={isDarkTheme} />
+                </div>
+            )}
 
             {/* Main content */}
             <main className="flex-grow">{children}</main>
