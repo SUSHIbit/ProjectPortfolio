@@ -9,7 +9,7 @@ export default function Contact({ personalInfo, internetLinks, socialLinks }) {
             <Head title="Contact" />
 
             <div className="flex min-h-screen items-start sm:items-center justify-center">
-                <div className="max-w-md px-6 sm:px-4 pt-8 sm:pt-0 text-left sm:text-center">
+                <div className="max-w-md px-6 sm:px-4 pt-8 sm:pt-0 text-center">
                     <h1 className="text-4xl sm:text-7xl font-light mb-6 sm:mb-8">
                         Hello.
                     </h1>
@@ -35,7 +35,7 @@ export default function Contact({ personalInfo, internetLinks, socialLinks }) {
                             <p className="mb-2 text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
                                 On the Internet:
                             </p>
-                            <div className="flex flex-wrap gap-x-3 gap-y-2 sm:justify-center justify-start">
+                            <div className="flex flex-wrap gap-x-3 gap-y-2 justify-center">
                                 {internetLinks.map((link, index) => (
                                     <React.Fragment key={link.id}>
                                         <a

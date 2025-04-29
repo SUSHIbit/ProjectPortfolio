@@ -6,7 +6,7 @@ export const ContactLinks = ({ links }) => {
     }
 
     return (
-        <div className="flex flex-wrap gap-x-3 gap-y-2 sm:justify-center justify-start">
+        <div className="flex flex-wrap gap-x-3 gap-y-2 justify-center">
             {links.map((link, index) => (
                 <React.Fragment key={link.id}>
                     <a

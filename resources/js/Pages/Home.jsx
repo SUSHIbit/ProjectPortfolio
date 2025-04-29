@@ -21,19 +21,19 @@ export default function Home({ personalInfo, socialLinks }) {
                 <div className="space-y-12 text-left sm:text-center">
                     <a
                         href="/work"
-                        className="block text-5xl sm:text-7xl font-light tracking-wider hover:text-zinc-400 transition-colors"
+                        className="block text-5xl sm:text-7xl font-light tracking-wider hover:text-zinc-400 hover:font-bold hover:italic transition-all"
                     >
                         WORK
                     </a>
                     <a
                         href="/about"
-                        className="block text-5xl sm:text-7xl font-light tracking-wider hover:text-zinc-400 transition-colors"
+                        className="block text-5xl sm:text-7xl font-light tracking-wider hover:text-zinc-400 hover:font-bold hover:italic transition-all"
                     >
                         ABOUT
                     </a>
                     <a
                         href="/contact"
-                        className="block text-5xl sm:text-7xl font-light tracking-wider hover:text-zinc-400 transition-colors"
+                        className="block text-5xl sm:text-7xl font-light tracking-wider hover:text-zinc-400 hover:font-bold hover:italic transition-all"
                     >
                         CONTACT
                     </a>

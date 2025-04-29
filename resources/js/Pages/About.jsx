@@ -28,7 +28,7 @@ export default function About({ personalInfo, skills, socialLinks }) {
                         <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
                             EXPERIENCE
                         </h3>
-                        <ul className="space-y-2 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
+                        <ul className="space-y-2 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-left sm:text-center">
                             <li>- Degree in Brand Communications</li>
                             <li>
                                 - 15 years experience in Digital Design, Web
@@ -54,12 +54,14 @@ export default function About({ personalInfo, skills, socialLinks }) {
                             <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
                                 SKILLS
                             </h3>
-                            <SkillsList skills={skills} />
+                            <div className="text-left sm:text-center">
+                                <SkillsList skills={skills} />
+                            </div>
                         </div>
                     )}
 
                     {personalInfo.cv_file && (
-                        <div className="mb-8 sm:mb-12 flex sm:justify-center justify-start">
+                        <div className="mb-8 sm:mb-12 flex justify-start sm:justify-center">
                             <Button
                                 asChild
                                 variant="outline"
@@ -81,35 +83,35 @@ export default function About({ personalInfo, skills, socialLinks }) {
                             <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
                                 KUDOS
                             </h3>
-                            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
+                            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-left sm:text-center">
                                 {personalInfo.kudos_text}
                             </p>
-                            <p className="mt-3 sm:mt-4 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
+                            <p className="mt-3 sm:mt-4 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-left sm:text-center">
                                 <a href="#" className="underline">
                                     Ahmad Zhafri
                                 </a>
-                                ,
-                                <a href="#" className="underline ml-1">
+                                ,{" "}
+                                <a href="#" className="underline">
                                     Hana Munira
                                 </a>
-                                ,
-                                <a href="#" className="underline ml-1">
+                                ,{" "}
+                                <a href="#" className="underline">
                                     Mohammad 'Azman
                                 </a>
-                                ,
-                                <a href="#" className="underline ml-1">
+                                ,{" "}
+                                <a href="#" className="underline">
                                     Norziah Johod
                                 </a>
-                                ,
-                                <a href="#" className="underline ml-1">
+                                ,{" "}
+                                <a href="#" className="underline">
                                     Rushyaidi Shahmy
                                 </a>
-                                ,
-                                <a href="#" className="underline ml-1">
+                                ,{" "}
+                                <a href="#" className="underline">
                                     Afiq Faris
                                 </a>
-                                ,
-                                <a href="#" className="underline ml-1">
+                                ,{" "}
+                                <a href="#" className="underline">
                                     Ikhwan Tukiran
                                 </a>
                                 . THANK YOU.
@@ -117,7 +119,7 @@ export default function About({ personalInfo, skills, socialLinks }) {
                         </div>
                     )}
 
-                    <div className="mb-8 sm:mb-12 flex sm:justify-center justify-start">
+                    <div className="mb-8 sm:mb-12 flex justify-start sm:justify-center">
                         <Button
                             asChild
                             variant="outline"

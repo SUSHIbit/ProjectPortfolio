@@ -12,7 +12,7 @@ export default function Work({ projects, socialLinks }) {
                 rel="noopener noreferrer"
                 className="block group"
             >
-                <h2 className="text-4xl sm:text-5xl font-light mb-2 group-hover:text-zinc-400 transition-colors">
+                <h2 className="text-4xl sm:text-5xl font-light mb-2 group-hover:text-zinc-400 group-hover:font-bold group-hover:italic transition-all">
                     {project.title}
                 </h2>
                 <div className="flex sm:justify-center justify-start items-center mb-2">

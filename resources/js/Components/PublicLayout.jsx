@@ -15,8 +15,8 @@ export default function PublicLayout({ children, socialLinks = [] }) {
                         HOME
                     </Link>
 
-                    {/* Copyright on right for mobile */}
-                    <div className="sm:hidden text-sm tracking-wide">
+                    {/* Copyright on right always visible */}
+                    <div className="text-sm tracking-wide">
                         © {new Date().getFullYear()}
                     </div>
                 </div>
@@ -30,12 +30,7 @@ export default function PublicLayout({ children, socialLinks = [] }) {
             {/* Main content */}
             <main className="flex-grow">{children}</main>
 
-            {/* Desktop footer with copyright at bottom left */}
-            <div className="hidden sm:block sm:fixed sm:bottom-10 sm:left-10 z-10">
-                <div className="text-sm tracking-wide">
-                    © {new Date().getFullYear()}
-                </div>
-            </div>
+            {/* Remove the duplicate copyright at bottom left on desktop */}
         </div>
     );
 }
