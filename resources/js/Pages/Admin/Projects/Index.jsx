@@ -1,16 +1,17 @@
 import React from "react";
 import { Head, Link } from "@inertiajs/react";
 import AdminLayout from "@/Layouts/AdminLayout";
-import { Button } from "@/Components/ui/button";
 import {
+    Alert,
+    AlertDescription,
+    Badge,
     Card,
     CardContent,
-    CardDescription,
     CardHeader,
     CardTitle,
-} from "@/Components/ui/card";
-import { Badge } from "@/Components/ui/badge";
-import { Alert, AlertDescription } from "@/Components/ui/alert";
+    CardDescription,
+    Button,
+} from "@/Components/ui";
 
 export default function Projects({ projects, flash }) {
     return (
@@ -25,11 +26,12 @@ export default function Projects({ projects, flash }) {
                     </p>
                 </div>
 
-                <Button asChild>
-                    <Link href={route("admin.projects.create")}>
-                        Add New Project
-                    </Link>
-                </Button>
+                <Link
+                    href={route("admin.projects.create")}
+                    className="inline-flex items-center justify-center bg-black text-white py-2 px-4 rounded-md hover:bg-zinc-800 transition-colors"
+                >
+                    Add New Project
+                </Link>
             </div>
 
             {flash.message && (
@@ -73,20 +75,15 @@ export default function Projects({ projects, flash }) {
                                         </CardDescription>
                                     </div>
                                     <div className="flex space-x-2">
-                                        <Button
-                                            asChild
-                                            variant="outline"
-                                            size="sm"
+                                        <Link
+                                            href={route(
+                                                "admin.projects.edit",
+                                                project.id
+                                            )}
+                                            className="inline-flex items-center justify-center bg-white border border-zinc-200 text-zinc-950 px-3 py-1 rounded text-sm hover:bg-zinc-100 transition-colors"
                                         >
-                                            <Link
-                                                href={route(
-                                                    "admin.projects.edit",
-                                                    project.id
-                                                )}
-                                            >
-                                                Edit
-                                            </Link>
-                                        </Button>
+                                            Edit
+                                        </Link>
                                         <Link
                                             href={route(
                                                 "admin.projects.destroy",

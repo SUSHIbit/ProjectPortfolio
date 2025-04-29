@@ -1,10 +1,13 @@
 import React from "react";
 import { Head, Link } from "@inertiajs/react";
 import AdminLayout from "@/Layouts/AdminLayout";
-import { Button } from "@/Components/ui/button";
-import { Card, CardContent } from "@/Components/ui/card";
-import { Alert, AlertDescription } from "@/Components/ui/alert";
-import { Badge } from "@/Components/ui/badge";
+import {
+    Alert,
+    AlertDescription,
+    Badge,
+    Card,
+    CardContent,
+} from "@/Components/ui";
 
 export default function SocialLinks({ socialLinks, flash }) {
     return (
@@ -22,11 +25,12 @@ export default function SocialLinks({ socialLinks, flash }) {
                     </p>
                 </div>
 
-                <Button asChild>
-                    <Link href={route("admin.social-links.create")}>
-                        Add New Social Link
-                    </Link>
-                </Button>
+                <Link
+                    href={route("admin.social-links.create")}
+                    className="inline-flex items-center justify-center bg-black text-white py-2 px-4 rounded-md hover:bg-zinc-800 transition-colors"
+                >
+                    Add New Social Link
+                </Link>
             </div>
 
             {flash.message && (
@@ -94,20 +98,15 @@ export default function SocialLinks({ socialLinks, flash }) {
                                         )}
                                     </div>
                                     <div className="col-span-2 flex justify-end space-x-2">
-                                        <Button
-                                            asChild
-                                            variant="outline"
-                                            size="sm"
+                                        <Link
+                                            href={route(
+                                                "admin.social-links.edit",
+                                                link.id
+                                            )}
+                                            className="inline-flex items-center justify-center bg-white border border-zinc-200 text-zinc-950 px-3 py-1 rounded text-sm hover:bg-zinc-100 transition-colors"
                                         >
-                                            <Link
-                                                href={route(
-                                                    "admin.social-links.edit",
-                                                    link.id
-                                                )}
-                                            >
-                                                Edit
-                                            </Link>
-                                        </Button>
+                                            Edit
+                                        </Link>
                                         <Link
                                             href={route(
                                                 "admin.social-links.destroy",

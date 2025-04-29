@@ -78,31 +78,31 @@ export default function About({ personalInfo, skills, socialLinks }) {
                             </p>
                             <p className="mt-4 text-zinc-600 dark:text-zinc-400">
                                 <a href="#" className="underline">
-                                    Shawn Roos
+                                    Ahmad Zhafri
                                 </a>
                                 ,
                                 <a href="#" className="underline ml-1">
-                                    Wayne Berry
+                                    Hana Munira
                                 </a>
                                 ,
                                 <a href="#" className="underline ml-1">
-                                    Daniel Klopper
+                                    Mohammad 'Azman
                                 </a>
                                 ,
                                 <a href="#" className="underline ml-1">
-                                    Michael Thorne
+                                    Norziah Johod
                                 </a>
                                 ,
                                 <a href="#" className="underline ml-1">
-                                    Kobus Brummer
+                                    Rushyaidi Shahmy
                                 </a>
                                 ,
                                 <a href="#" className="underline ml-1">
-                                    Pascal Righini
+                                    Afiq Faris
                                 </a>
                                 ,
                                 <a href="#" className="underline ml-1">
-                                    Jade Scully
+                                    Ikhwan Tukiran
                                 </a>
                                 . THANK YOU.
                             </p>
