@@ -1,5 +1,4 @@
 <?php
-// routes/web.php
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WorkController;
@@ -33,9 +32,11 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 // Admin Routes (protected)
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-    // Dashboard
+    // Dashboard - Make sure this route exists and matches the HOME constant
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard.index');
+    
+    // Comment out or remove this route to avoid conflicts
+    // Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard.index');
     
     // Personal Info
     Route::get('/personal-info', [AdminPersonalInfoController::class, 'edit'])->name('personal-info.edit');
