@@ -1,3 +1,4 @@
+// resources/js/Pages/About.jsx
 import React from "react";
 import { Head } from "@inertiajs/react";
 import PublicLayout from "@/Components/PublicLayout";
@@ -6,29 +7,34 @@ import { Button } from "@/Components/ui/button";
 
 export default function About({ personalInfo, skills, socialLinks }) {
     return (
-        <PublicLayout socialLinks={socialLinks}>
+        <PublicLayout socialLinks={[]}>
             <Head title="About" />
 
             <div className="container mx-auto py-8 sm:py-24 px-6 sm:px-0">
-                <div className="max-w-3xl mx-auto mt-4 sm:mt-0 flex flex-col items-center">
-                    <h1 className="text-3xl sm:text-5xl font-light mb-6 sm:mb-8 text-center w-full">
+                <div className="max-w-3xl mx-auto mt-4 sm:mt-0 flex flex-col sm:items-center">
+                    <h1 className="text-3xl sm:text-5xl font-light mb-6 sm:mb-8 text-left sm:text-center w-full">
                         About
                     </h1>
 
-                    <h2 className="text-xl sm:text-3xl font-light mb-4 sm:mb-6 text-center w-full">
-                        I'm {personalInfo.name}. A designer, maker and problem
-                        solver.
+                    <h2 className="text-xl sm:text-3xl font-bold mb-4 sm:mb-6 text-left sm:text-center w-full">
+                        I'm{" "}
+                        <span className="font-bold text-black dark:text-white">
+                            MOHAMMAD 'ARIEF ASYRAF BIN MOHAMMAD 'AZMAN
+                        </span>
+                        . A designer, maker and problem solver.
                     </h2>
 
-                    <div className="prose dark:prose-invert mb-8 sm:mb-12 text-center w-full mx-auto max-w-2xl">
-                        <p className="text-center">{personalInfo.about_description}</p>
+                    <div className="prose dark:prose-invert mb-8 sm:mb-12 text-left sm:text-center w-full mx-auto max-w-2xl">
+                        <p className="text-left sm:text-center">
+                            {personalInfo.about_description}
+                        </p>
                     </div>
 
-                    <div className="mb-8 sm:mb-12 w-full text-center">
-                        <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-center">
+                    <div className="mb-8 sm:mb-12 w-full">
+                        <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
                             EXPERIENCE
                         </h3>
-                        <ul className="space-y-2 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-center list-none p-0">
+                        <ul className="space-y-2 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-left sm:text-center list-none p-0">
                             <li>- Degree in Brand Communications</li>
                             <li>
                                 - 15 years experience in Digital Design, Web
@@ -51,17 +57,17 @@ export default function About({ personalInfo, skills, socialLinks }) {
 
                     {skills.length > 0 && (
                         <div className="mb-8 sm:mb-12 w-full">
-                            <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-center">
+                            <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
                                 SKILLS
                             </h3>
-                            <div className="text-center">
+                            <div className="text-left sm:text-center">
                                 <SkillsList skills={skills} />
                             </div>
                         </div>
                     )}
 
                     {personalInfo.cv_file && (
-                        <div className="mb-8 sm:mb-12 flex justify-center w-full">
+                        <div className="mb-8 sm:mb-12 flex sm:justify-center justify-start w-full">
                             <Button
                                 asChild
                                 variant="outline"
@@ -80,13 +86,13 @@ export default function About({ personalInfo, skills, socialLinks }) {
 
                     {personalInfo.kudos_text && (
                         <div className="mb-8 sm:mb-12 w-full">
-                            <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-center">
+                            <h3 className="text-lg sm:text-xl mb-3 sm:mb-4 text-left sm:text-center">
                                 KUDOS
                             </h3>
-                            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-center mx-auto max-w-2xl">
+                            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-left sm:text-center mx-auto max-w-2xl">
                                 {personalInfo.kudos_text}
                             </p>
-                            <p className="mt-3 sm:mt-4 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-center mx-auto max-w-2xl">
+                            <p className="mt-3 sm:mt-4 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base text-left sm:text-center mx-auto max-w-2xl">
                                 <a href="#" className="underline">
                                     Ahmad Zhafri
                                 </a>
@@ -119,7 +125,7 @@ export default function About({ personalInfo, skills, socialLinks }) {
                         </div>
                     )}
 
-                    <div className="mb-8 sm:mb-12 flex justify-center w-full">
+                    <div className="mb-8 sm:mb-12 flex sm:justify-center justify-start w-full">
                         <Button
                             asChild
                             variant="outline"
